@@ -1,0 +1,7 @@
+<h1>Welcome, <%= current_user.username %></h1>
+
+<% @shoes.each do |shoe| %>
+  <%= shoe.name %>
+  <%= shoe.brand %>
+  <%= shoe.color %>
+<% end %>
