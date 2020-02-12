@@ -18,5 +18,13 @@ class UserController < ApplicationController
       redirect to "/shoes"
     end
 	end
+	
+	get "/login" do
+	  if !logged_in?
+		  erb :'users/login'
+		else
+      redirect to "/shoes"
+    end
+	end
   
 end
