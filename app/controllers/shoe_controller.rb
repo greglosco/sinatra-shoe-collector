@@ -1,2 +1,0 @@
-class ShoeController < ApplicationController 
-end
