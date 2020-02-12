@@ -1,2 +1,2 @@
-class ShoeController < Application Controller 
+class ShoeController < ApplicationController 
 end
