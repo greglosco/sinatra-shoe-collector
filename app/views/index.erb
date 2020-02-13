@@ -1,8 +1,18 @@
 <h1>Welcome to the Sinatra Shoe Collector App!</h1>
   
+   <% if logged_in? %>
+  
+    <p>Welcome <%= current_user.username %></p>
+    <a>View Your Shoes</a>
+    <a>Create Shoe</a>
+    <a>Log Out</a>
+  
+  <% else %>
+  
     <a href="/signup">Sign Up</a>
     <br>
       or
     <br>
     <a href="/login">Log In</a>
     
+  <% end %>
