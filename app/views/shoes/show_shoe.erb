@@ -1,11 +1,5 @@
-<h1>Welcome, <%= current_user.username %></h1>
-<p>Your Shoes:</p>
 <ul>
-  <%  current_user.shoes.each.with_index(1) do |shoe, i| %>
-    <li><%= "#{i}." %></li>
-    <li>Name: <%= shoe.name %>  </li>
-    <li>Brand: <%= shoe.brand %>  </li>
-    <li>Color: <%= shoe.color %>  </li>
-    <br> 
-  <% end %> 
+  <li>Name: <%= shoe.name %>  </li>
+  <li>Brand: <%= shoe.brand %>  </li>
+  <li>Color: <%= shoe.color %>  </li>
 </ul>
