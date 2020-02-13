@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   has_many :shoes 
   
   def slug
-    name.downcase.gsub(" ","-")
+    username.downcase.gsub(" ","-")
   end
   
   def self.find_by_slug(slug)

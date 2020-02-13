@@ -9,4 +9,12 @@ class ShoesController < ApplicationController
     end
   end
   
+  get '/shoes/new' do 
+    if logged_in?
+      erb :'/shoes/new'
+    else
+      redirect to '/login'
+    end
+  end
+  
 end
