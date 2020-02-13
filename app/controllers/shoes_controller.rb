@@ -22,7 +22,7 @@ class ShoesController < ApplicationController
       if params[:name] == "" || params[:brand] == "" || params[:color] == ""
         redirect to '/shoes/new'
       else 
-        @shoe = current_user.shoes.build(name: params[:name], brand: params[:brand], color: params[:color])
+        @shoe = current_user.shoes.new(name: params[:name], brand: params[:brand], color: params[:color])
         if @shoe.save
           redirect to "/shoes/#{@shoe.id}"
         else
