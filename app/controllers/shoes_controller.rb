@@ -1,3 +1,5 @@
+require 'pry'
+
 class ShoesController < ApplicationController 
   
    get '/shoes' do 
@@ -36,7 +38,7 @@ class ShoesController < ApplicationController
   
   get '/shoes/:id' do
     if logged_in?
-      @shoe = Shoe.find_by(params[:id])
+      @shoe = Shoe.find_by_id(params[:id])
       erb :'/shoes/show_shoe'
     else
       redirect to '/login'
@@ -45,7 +47,7 @@ class ShoesController < ApplicationController
   
   get '/shoes/:id/edit' do 
     if logged_in?
-      @shoe = Shoe.find_by(params[:id])
+      @shoe = Shoe.find_by_id(params[:id])
       if @shoe && @shoe.user == current_user
         erb :'/shoes/edit_shoe'
       else 
