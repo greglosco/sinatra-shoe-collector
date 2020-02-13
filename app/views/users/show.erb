@@ -1,9 +1,11 @@
-<h3>Welcome, <%= @user.username %></h3>
+<h3>Welcome, <%= current_user.username %></h3>
 
-<a href='/shoes'>Your Shoes</a>
-<a href='/logout'>Logout</a>
+<ul>
+  <li><a href='/shoes'>Your Shoes</a></li>
+  <li><a href='/logout'>Logout</a></li>
+</ul>
 
-<form method="post" action="/users/<%= @user.id %>/delete"> 
+<form method="post" action="/users/<%= current_user.id %>/delete"> 
 <input id="hidden" type="hidden" name="_method" value="DELETE"> 
 <input type="submit" value="Delete Account">
 </form>
