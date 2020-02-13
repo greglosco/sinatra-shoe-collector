@@ -34,4 +34,13 @@ class ShoesController < ApplicationController
     end
   end
   
+  get '/shoes/:id' do
+    if logged_in?
+      @shoe = Shoe.find_by(params[:id])
+      erb :'/shoes/show_shoe'
+    else
+      redirect to '/login'
+    end
+  end
+  
 end
