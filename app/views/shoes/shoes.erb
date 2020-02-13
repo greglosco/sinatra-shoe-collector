@@ -2,8 +2,7 @@
 <p>Your Shoes:</p>
 <ul>
   <%  current_user.shoes.each.with_index(1) do |shoe, i| %>
-    <li><%= "#{i}." %></li>
-    <li>Name: <a href='/shoes/<%= shoe.id %>'><%= shoe.name %></a></li>
+    <li><%= "#{i}." %> Name: <a href='/shoes/<%= shoe.id %>'><%= shoe.name %></a></li>
   <% end %> 
 </ul>
 
