@@ -5,7 +5,9 @@
   <li>Color: <%= @shoe.color %>  </li>
 </ul>
 
-<a href="/shoes/<%= @shoe.id %>/edit">Edit Shoe</a>
+<br><a href='/shoes/<%= @shoe.id %>/edit'>Edit Shoe Details</a>
+<br><a href='/shoes'>Back to Shoe Collection</a>
+<br><a href='/shoes/new'>Add another Shoe</a>
 
 <form method="post" action="/shoes/<%= @shoe.id %>/delete"> 
 <input id="hidden" type="hidden" name="_method" value="DELETE"> 
