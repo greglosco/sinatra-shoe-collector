@@ -2,10 +2,12 @@
   
    <% if logged_in? %>
   
-    <p>Welcome <%= current_user.username %></p>
-    <a>View Your Shoes</a>
-    <a>Create Shoe</a>
-    <a>Log Out</a>
+    <h3>Welcome <%= current_user.username %></h3>
+    <ul>
+      <li><a href='/shoes'>View Your Shoes</a></li>
+      <li><a href='/shoes/new'>Create Shoe</a></li>
+      <li><a href='/logout'>Log Out</a></li>
+    </ul>
   
   <% else %>
   
