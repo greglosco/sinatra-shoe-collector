@@ -17,4 +17,21 @@ class ShoesController < ApplicationController
     end
   end
   
+  post '/shoes' do 
+    if logged_in?
+      if params[:content] == ""
+        redirect to '/shoes/new'
+      else 
+        @shoe = current_user.shoes.build(name: params[:name], brand: params[:brand], color: params[:color])
+        if @shoe.save
+          redirect to "/shoes/#{@shoe.id}"
+        else
+          redirect to '/shoes/new'
+        end
+      end
+    else
+      redirect to '/login'
+    end
+  end
+  
 end
