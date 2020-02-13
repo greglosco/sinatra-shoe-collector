@@ -1,5 +1,12 @@
 <ul>
-  <li>Name: <%= shoe.name %>  </li>
-  <li>Brand: <%= shoe.brand %>  </li>
-  <li>Color: <%= shoe.color %>  </li>
+  <li>Name: <%= @shoe.name %>  </li>
+  <li>Brand: <%= @shoe.brand %>  </li>
+  <li>Color: <%= @shoe.color %>  </li>
 </ul>
+
+<a href="/shoes/<%= @shoe.id %>/edit">Edit Tweet</a>
+
+<form method="post" action="/shoes/<%= @shoe.id %>/delete"> 
+<input id="hidden" type="hidden" name="_method" value="DELETE"> 
+<input type="submit" value="Delete Shoe">
+</form>
