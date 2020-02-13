@@ -1,9 +1,11 @@
-<h3>Welcome, <%= @user.username %></h3>
+<h3>Welcome, <%= current_user.username %></h3>
 <p>Your Shoes:</p>
 <ul>
-  <%  @user.shoes.each do |shoe| %>
-    <li> <%= shoe.name %>  </li>
-    <li> <%= shoe.brand %>  </li>
-    <li> <%= shoe.color %>  </li>
+  <%  current_user.shoes.each.with_index(1) do |shoe, i| %>
+    <li><%= "#{i}." %></li>
+    <li>Name: <%= shoe.name %>  </li>
+    <li>Brand: <%= shoe.brand %>  </li>
+    <li>Color: <%= shoe.color %>  </li>
+    <br> 
   <% end %> 
 </ul>
