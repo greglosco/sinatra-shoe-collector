@@ -1,0 +1,11 @@
+<h3>Edit Shoe</h3>
+
+<ul>
+<form method='post' action='/shoes/<%= @shoe.id %>'>
+    <li><input type='hidden' name='_method' value='patch'></li>
+    <li>New Name: <input type="text" name="name"></li>
+    <li>New Brand: <input type="text" name="brand"></li>
+    <li>New Color: <input type="text" name="color"></li>
+    <li><input type="submit" value="Edit Shoe"></li>
+</form>
+</ul>
