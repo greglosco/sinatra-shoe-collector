@@ -19,7 +19,7 @@ class ShoesController < ApplicationController
   
   post '/shoes' do 
     if logged_in?
-      if params[:content] == ""
+      if params[:name] == "" || params[:brand] == "" || params[:color] == ""
         redirect to '/shoes/new'
       else 
         @shoe = current_user.shoes.build(name: params[:name], brand: params[:brand], color: params[:color])
@@ -50,6 +50,27 @@ class ShoesController < ApplicationController
         erb :'/shoes/edit_shoe'
       else 
         redirect to '/shoes'
+      end
+    else
+      redirect to '/login'
+    end
+  end
+  
+  patch '/shoes/:id' do 
+    if logged_in?
+      if params[:name] == "" || params[:brand] == "" || params[:color] == ""
+        redirect to "/shoes/#{params[:id]}/edit"
+      else
+        @shoe = Shoe.find_by(params[:id])
+        if @shoe && @shoe.user == current_user
+          if @shoe.update(name: params[:name], brand: params[:brand], color: params[:color])
+            redirect to "/shoes/#{@shoe.id}"
+          else
+            redirect to "/shoes/#{@shoe.id}/edit"
+          end
+        else 
+          redirect to "/shoes"
+        end
       end
     else
       redirect to '/login'
