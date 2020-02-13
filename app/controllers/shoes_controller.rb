@@ -63,7 +63,7 @@ class ShoesController < ApplicationController
       if params[:name] == "" || params[:brand] == "" || params[:color] == ""
         redirect to "/shoes/#{params[:id]}/edit"
       else
-        @shoe = Shoe.find_by(params[:id])
+        @shoe = Shoe.find_by_id(params[:id])
         if @shoe && @shoe.user == current_user
           if @shoe.update(name: params[:name], brand: params[:brand], color: params[:color])
             redirect to "/shoes/#{@shoe.id}"
@@ -81,7 +81,7 @@ class ShoesController < ApplicationController
   
   delete '/shoes/:id/delete' do
     if logged_in?
-      @shoe = Shoe.find_by(params[:id])
+      @shoe = Shoe.find_by_id(params[:id])
       if @shoe && @shoe.user == current_user 
         @shoe.delete
       end
@@ -90,5 +90,5 @@ class ShoesController < ApplicationController
        redirect to '/login'
     end
   end
-  
+
 end
