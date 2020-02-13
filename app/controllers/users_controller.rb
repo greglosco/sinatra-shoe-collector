@@ -58,6 +58,16 @@ class UsersController < ApplicationController
 		end
 	end
 	
-	
+	delete '/users/:id/delete' do
+    if logged_in?
+      @user = User.find_by(params[:id])
+      if @user && @user == current_user 
+        @user.delete
+      end
+        redirect to "/"
+    else
+      redirect to '/login'
+    end
+  end
   
 end
