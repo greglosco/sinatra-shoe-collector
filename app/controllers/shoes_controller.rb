@@ -85,7 +85,7 @@ class ShoesController < ApplicationController
       end
         redirect to "/shoes"
     else
-      redirect to '/login'
+       redirect to '/login'
     end
   end
   
