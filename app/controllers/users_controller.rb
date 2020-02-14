@@ -60,7 +60,7 @@ class UsersController < ApplicationController
 	
 	delete '/users/:id/delete' do
     if logged_in?
-      @user = User.find_by(params[:id])
+      @user = User.find_by_id(params[:id])
       if @user && @user == current_user 
         @user.delete
       end
