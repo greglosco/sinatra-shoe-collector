@@ -1,5 +1,6 @@
 class Shoe < ActiveRecord::Base 
   belongs_to :user 
+  belongs_to :category
   
   def slug
     name.downcase.gsub(" ","-")

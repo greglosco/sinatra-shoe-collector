@@ -44,6 +44,9 @@ class ShoesController < ApplicationController
       redirect to '/login'
     end
   end
+
+  # redirect = new HTTP req
+  # render = rendering a file
   
   get '/shoes/:id/edit' do 
     if logged_in?
